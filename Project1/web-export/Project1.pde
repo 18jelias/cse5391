@@ -14,7 +14,9 @@ void draw() {
   pushMatrix();
   translate(width/2, (height-height/5));
   drawHorizon();
-  drawSunOutlines();
+  for(int i = 0; i < 50; i++) {
+    drawSunOutlines(i);
+  }
   drawSun();
   popMatrix();
 }
@@ -34,22 +36,20 @@ void drawHorizon() {
 void drawLand() {
 }
 
-void drawSunOutlines() {
-  for(int i = 0; i < 20; i++);
-  {
-    fill(252,242,60,100);
+void drawSunOutlines(int i) {
+    fill(252-2*i,242-3*i,60+.5*i,5);
     noStroke();
-    arc(0,-10,200,200, PI+PI/6, TWO_PI-PI/6);
-  }
+    arc(0,-10,20+20*i,30+10*i, PI+PI/6, TWO_PI-PI/6);
 }
 
 void drawSun() {
-  fill(255);
+  fill(255, 255, 200);
   noStroke();
   ellipse(0, -30, 20, 20);
 }
 
 void drawRays() {
+  
 }
 
 void drawMountains() {
