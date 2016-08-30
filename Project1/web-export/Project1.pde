@@ -13,7 +13,6 @@ void draw() {
   setGradient(0, height/2, width, (height/4)+height/20, b2, b3, Y_AXIS);
   pushMatrix();
   translate(width/2, (height-height/5));
-  drawHorizon();
   for(int i = 0; i < 50; i++) {
     drawSunOutlines(i);
   }
@@ -21,42 +20,46 @@ void draw() {
   {
     drawSun(i);
   }
- // drawSun();
+  for(int i = 0; i < 30; i++)
+  {
+    
+    drawMountains(i);
+  }
+  drawHorizon();
+  drawLand();
   popMatrix();
 }
 
-void mousePressed() {
-}
-
-void keyPressed() {
-}
 
 void drawHorizon() {
-  strokeWeight(10);
+  strokeWeight(15);
   stroke(0);
   line(-width/2, 0, width/2, 0);
 }
 
 void drawLand() {
+  fill(20, 20, 31);
+  rect(-width/2, 0, width, height/5); 
+  
 }
 
 void drawSunOutlines(int i) {
     fill(252-2*i,242-3*i,60+.5*i,5);
     noStroke();
-    arc(0,-10,20+20*i,30+10*i, PI+PI/6, TWO_PI-PI/6);
+    arc(0,-10,20+20*i,30+10*i, PI, TWO_PI);
 }
 
 void drawSun(int i) {
   fill(219-2*i, 159, 38, 150);
   noStroke();
-  ellipse(0, -30, 10*i*.5, 10*i*.5);
+  ellipse(0, -20, 10*i*.5, 10*i*.5);
 }
 
-void drawRays() {
-  
-}
 
-void drawMountains() {
+void drawMountains(int i) {
+  noStroke();
+  fill(37,6,30);
+  ellipse(-width/2+i*30, 10, -20, (int)random(30,50));
 }
 
 //Following code written by Casey Reas and Ben Fry on http://processingjs.org/learning/basic/lineargradient/
