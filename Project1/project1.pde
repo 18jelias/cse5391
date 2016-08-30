@@ -6,15 +6,16 @@ void setup() {
 }
 
 void draw() {
-  color b1 = color(22,42,106);
-  color b2 = color(54,71,70);
-  color b3 = color(36,31,31);
+  color b1 = color(22, 42, 106);
+  color b2 = color(54, 71, 70);
+  color b3 = color(36, 31, 31);
   setGradient(0, 0, width, height/2, b1, b2, Y_AXIS);
   setGradient(0, height/2, width, (height/4)+height/20, b2, b3, Y_AXIS);
   pushMatrix();
-
   translate(width/2, (height-height/5));
   drawHorizon();
+  drawSunOutlines();
+  drawSun();
   popMatrix();
 }
 
@@ -25,7 +26,7 @@ void keyPressed() {
 }
 
 void drawHorizon() {
-  strokeWeight(5);
+  strokeWeight(10);
   stroke(0);
   line(-width/2, 0, width/2, 0);
 }
@@ -33,7 +34,19 @@ void drawHorizon() {
 void drawLand() {
 }
 
+void drawSunOutlines() {
+  for(int i = 0; i < 20; i++);
+  {
+    fill(252,242,60,100);
+    noStroke();
+    arc(0,-10,200,200, PI+PI/6, TWO_PI-PI/6);
+  }
+}
+
 void drawSun() {
+  fill(255);
+  noStroke();
+  ellipse(0, -30, 20, 20);
 }
 
 void drawRays() {
@@ -80,6 +93,5 @@ void setGradient(int x, int y, float w, float h, color c1, color c2, int axis ) 
       }
     }
   }
-//End of pasted code
-
 }
+//End of pasted code
