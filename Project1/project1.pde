@@ -17,7 +17,11 @@ void draw() {
   for(int i = 0; i < 50; i++) {
     drawSunOutlines(i);
   }
-  drawSun();
+  for(int i = 0; i < 8; i++)
+  {
+    drawSun(i);
+  }
+ // drawSun();
   popMatrix();
 }
 
@@ -42,10 +46,10 @@ void drawSunOutlines(int i) {
     arc(0,-10,20+20*i,30+10*i, PI+PI/6, TWO_PI-PI/6);
 }
 
-void drawSun() {
-  fill(255, 255, 200);
+void drawSun(int i) {
+  fill(219-2*i, 159, 38, 150);
   noStroke();
-  ellipse(0, -30, 20, 20);
+  ellipse(0, -30, 10*i*.5, 10*i*.5);
 }
 
 void drawRays() {
