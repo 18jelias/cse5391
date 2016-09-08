@@ -10,7 +10,7 @@ class Particle {
     this.a = a.get();
     v.x = randomGaussian()*.3;
     v.y = randomGaussian()*.3 -1;
-    lifespan = 75;
+    lifespan = 100;
     this.c = c;
     loc = center.get();
   }
@@ -24,13 +24,13 @@ class Particle {
     pushStyle();
     noStroke();
     if (c == 1) {
-      fill(0+lifespan, 34,100, lifespan); 
+      fill(0+lifespan, 34,130, lifespan); 
     } else if (c == 2) {
-      fill(34, lifespan,100, lifespan); 
+      fill(34, lifespan, 100, lifespan); 
     } else if (c == 3) {
-      fill(100, 34,lifespan, lifespan); 
+      fill(80, 34,lifespan, lifespan); 
     }
-    ellipse(loc.x, loc.y, 10, 10);
+    ellipse(loc.x, loc.y, 20, 20);
     popStyle();
   }
   

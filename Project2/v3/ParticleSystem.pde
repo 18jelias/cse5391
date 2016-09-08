@@ -5,10 +5,10 @@ class ParticleSystem {
   int c;
   PVector a;
   
-  ParticleSystem(int x, int y, int c, PVector a) {
+  ParticleSystem(int x, int y, int c, PVector a, int num) {
     particles = new ArrayList<Particle>();
     center = new PVector();
-    numOfParticles = 1000;
+    numOfParticles = num;
     center.x = x;
     center.y = y;
     this.c = c;
@@ -34,7 +34,7 @@ class ParticleSystem {
       p.accelerate(f);
     }
   }
-  
+
   void addParticles() {
     particles.add(new Particle(center, c, a.get()));
   }
